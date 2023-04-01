@@ -1,0 +1,26 @@
+<table style="background-color: white;">
+                <tr>
+                    <td><b>S No</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>ID</b></td>
+                    <td><b>Time</b></td>
+                </tr>
+                {% if l %}
+
+                {% for i in range(l) %}
+                <tr>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ names[i] }}</td>
+                    <td>{{ rolls[i] }}</td>
+                    <td>{{ times[i] }}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </table>
+
+
+
+
+
+    if 'face_recognition_model.pkl' not in os.listdir('static'):
+        return render_template('home.html', totalreg=totalreg(), datetoday2=datetoday2(), mess='There is no trained model in the static folder. Please add a new face to continue.')
